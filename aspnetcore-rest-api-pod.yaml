@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: aspnetcore-restapi
+ labels:
+   app: aspnetcore-restapi
+spec:
+ containers:
+ - name: aspnetcore-container
+   image: "gokgokalp/aspnetcorerestapionlinux"
+   ports:
+   - containerPort: 5000
