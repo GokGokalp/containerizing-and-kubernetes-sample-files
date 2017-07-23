@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: aspnetcore-restapi-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: aspnetcore-restapi
+  template:
+    metadata:
+      labels:
+        app: aspnetcore-restapi
+    spec:
+      containers:
+      - name: aspnetcore-container
+        image: "gokgokalp/aspnetcorerestapionlinux"
+        ports:
+        - containerPort: 5000
